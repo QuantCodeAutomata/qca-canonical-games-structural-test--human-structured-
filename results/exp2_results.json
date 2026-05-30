@@ -1,0 +1,311 @@
+{
+  "experiment": "exp2_novel",
+  "n_total": 3600,
+  "agent_types": [
+    "human",
+    "gpt-base",
+    "gpt-reasoning"
+  ],
+  "test_results": {
+    "human": {
+      "agent_label": "human",
+      "t1_conditional_dep": {
+        "model_summary": "                            OLS Regression Results                            \n==============================================================================\nDep. Variable:                  delta   R-squared:                      -0.003\nModel:                            OLS   Adj. R-squared:                 -0.005\nMethod:                 Least Squares   F-statistic:                    -1.094\nDate:                Sat, 30 May 2026   Prob (F-statistic):               1.00\nTime:                        14:03:42   Log-Likelihood:                -3721.6\nNo. Observations:                1200   AIC:                             7451.\nDf Residuals:                    1196   BIC:                             7472.\nDf Model:                           3                                         \nCovariance Type:            nonrobust                                         \n===============================================================================================\n                                  coef    std err          t      P>|t|      [0.025      0.975]\n-----------------------------------------------------------------------------------------------\nIntercept                    2.505e+13   3.28e+13      0.764      0.445   -3.93e+13    8.94e+13\nopponent_info_named[T.True]    -0.2131      0.311     -0.685      0.494      -0.824       0.397\nframing_neutral[T.True]         0.0153      0.311      0.049      0.961      -0.595       0.626\nstake                       -2.505e+13   3.28e+13     -0.764      0.445   -8.94e+13    3.93e+13\n==============================================================================\nOmnibus:                       95.436   Durbin-Watson:                   1.131\nProb(Omnibus):                  0.000   Jarque-Bera (JB):               88.075\nSkew:                           0.598   Prob(JB):                     7.49e-20\nKurtosis:                       2.425   Cond. No.                     4.77e+14\n==============================================================================\n\nNotes:\n[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.\n[2] The smallest eigenvalue is 1.35e-26. This might indicate that there are\nstrong multicollinearity problems or that the design matrix is singular.",
+        "r_squared": -0.002751028302787395,
+        "f_pvalue": 1.0,
+        "coef_table": [
+          {
+            "coef": 25045114693102.234,
+            "pvalue": 0.4452373679038105,
+            "ci_lower": -39301677075239.414,
+            "ci_upper": 89391906461443.88
+          },
+          {
+            "coef": -0.2130618747915038,
+            "pvalue": 0.4937016078262042,
+            "ci_lower": -0.8236229592317936,
+            "ci_upper": 0.397499209648786
+          },
+          {
+            "coef": 0.015297012827482193,
+            "pvalue": 0.9608042368776082,
+            "ci_lower": -0.5952647419743895,
+            "ci_upper": 0.6258587676293539
+          },
+          {
+            "coef": -25045114693097.145,
+            "pvalue": 0.44523736790390545,
+            "ci_lower": -89391906461439.11,
+            "ci_upper": 39301677075244.81
+          }
+        ],
+        "significant_features": [],
+        "structured": false
+      },
+      "t2_distributional_asym": {
+        "skewness": 0.5974780415864689,
+        "skewness_test_stat": 7.892227841036653,
+        "skewness_pvalue": 2.96839159396388e-15,
+        "exceeds_threshold": true,
+        "asymmetric": true
+      },
+      "t3_path_dependence": {
+        "error": "'session_id'",
+        "lag_pvalue": 1.0,
+        "path_dependent": false
+      },
+      "t4_paraphrase_robustness": {
+        "error": "'Column not found: standardized_delta'",
+        "cv": Infinity,
+        "robust": false
+      },
+      "classification": "non_human_llm"
+    },
+    "gpt-base": {
+      "agent_label": "human",
+      "t1_conditional_dep": {
+        "model_summary": "                            OLS Regression Results                            \n==============================================================================\nDep. Variable:                  delta   R-squared:                      -0.000\nModel:                            OLS   Adj. R-squared:                 -0.003\nMethod:                 Least Squares   F-statistic:                  -0.05045\nDate:                Sat, 30 May 2026   Prob (F-statistic):               1.00\nTime:                        14:03:42   Log-Likelihood:                -4028.6\nNo. Observations:                1200   AIC:                             8065.\nDf Residuals:                    1196   BIC:                             8085.\nDf Model:                           3                                         \nCovariance Type:            nonrobust                                         \n===============================================================================================\n                                  coef    std err          t      P>|t|      [0.025      0.975]\n-----------------------------------------------------------------------------------------------\nIntercept                    4.381e+13   4.24e+13      1.034      0.301   -3.93e+13    1.27e+14\nopponent_info_named[T.True]     0.2280      0.402      0.567      0.571      -0.561       1.017\nframing_neutral[T.True]         0.3834      0.402      0.954      0.340      -0.405       1.172\nstake                       -4.381e+13   4.24e+13     -1.034      0.301   -1.27e+14    3.93e+13\n==============================================================================\nOmnibus:                       74.768   Durbin-Watson:                   1.803\nProb(Omnibus):                  0.000   Jarque-Bera (JB):              138.861\nSkew:                           0.436   Prob(JB):                     7.03e-31\nKurtosis:                       4.420   Cond. No.                     4.77e+14\n==============================================================================\n\nNotes:\n[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.\n[2] The smallest eigenvalue is 1.35e-26. This might indicate that there are\nstrong multicollinearity problems or that the design matrix is singular.",
+        "r_squared": -0.00012657188015285925,
+        "f_pvalue": 1.0,
+        "coef_table": [
+          {
+            "coef": 43814923450102.42,
+            "pvalue": 0.30115334452316506,
+            "ci_lower": -39288114040906.45,
+            "ci_upper": 126917960941111.3
+          },
+          {
+            "coef": 0.22798543562392645,
+            "pvalue": 0.5706496427856058,
+            "ci_lower": -0.5605461958125306,
+            "ci_upper": 1.0165170670603836
+          },
+          {
+            "coef": 0.3833663032560535,
+            "pvalue": 0.34035001018874933,
+            "ci_lower": -0.4051661939435932,
+            "ci_upper": 1.1718988004557
+          },
+          {
+            "coef": -43814923450100.39,
+            "pvalue": 0.30115334452318987,
+            "ci_lower": -126917960941109.66,
+            "ci_upper": 39288114040908.875
+          }
+        ],
+        "significant_features": [],
+        "structured": false
+      },
+      "t2_distributional_asym": {
+        "skewness": 0.4369526009672598,
+        "skewness_test_stat": 5.957861704835253,
+        "skewness_pvalue": 2.555596323347182e-09,
+        "exceeds_threshold": false,
+        "asymmetric": false
+      },
+      "t3_path_dependence": {
+        "error": "'session_id'",
+        "lag_pvalue": 1.0,
+        "path_dependent": false
+      },
+      "t4_paraphrase_robustness": {
+        "error": "'Column not found: standardized_delta'",
+        "cv": Infinity,
+        "robust": false
+      },
+      "classification": "non_human_llm"
+    },
+    "gpt-reasoning": {
+      "agent_label": "human",
+      "t1_conditional_dep": {
+        "model_summary": "                            OLS Regression Results                            \n==============================================================================\nDep. Variable:                  delta   R-squared:                       0.002\nModel:                            OLS   Adj. R-squared:                 -0.000\nMethod:                 Least Squares   F-statistic:                    0.8595\nDate:                Sat, 30 May 2026   Prob (F-statistic):              0.462\nTime:                        14:03:42   Log-Likelihood:                -3999.1\nNo. Observations:                1200   AIC:                             8006.\nDf Residuals:                    1196   BIC:                             8027.\nDf Model:                           3                                         \nCovariance Type:            nonrobust                                         \n===============================================================================================\n                                  coef    std err          t      P>|t|      [0.025      0.975]\n-----------------------------------------------------------------------------------------------\nIntercept                     2.65e+13   4.13e+13      0.641      0.522   -5.46e+13    1.08e+14\nopponent_info_named[T.True]     0.6982      0.392      1.780      0.075      -0.071       1.468\nframing_neutral[T.True]        -0.2431      0.392     -0.620      0.535      -1.013       0.526\nstake                        -2.65e+13   4.13e+13     -0.641      0.522   -1.08e+14    5.46e+13\n==============================================================================\nOmnibus:                       87.012   Durbin-Watson:                   1.741\nProb(Omnibus):                  0.000   Jarque-Bera (JB):              133.925\nSkew:                           0.559   Prob(JB):                     8.29e-30\nKurtosis:                       4.195   Cond. No.                     4.77e+14\n==============================================================================\n\nNotes:\n[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.\n[2] The smallest eigenvalue is 1.35e-26. This might indicate that there are\nstrong multicollinearity problems or that the design matrix is singular.",
+        "r_squared": 0.0021512088319292078,
+        "f_pvalue": 0.4615901711810293,
+        "coef_table": [
+          {
+            "coef": 26498505824254.86,
+            "pvalue": 0.5215567667636427,
+            "ci_lower": -54589874982703.55,
+            "ci_upper": 107586886631213.27
+          },
+          {
+            "coef": 0.698246032474364,
+            "pvalue": 0.07525234140307265,
+            "ci_lower": -0.07116932391582254,
+            "ci_upper": 1.4676613888645504
+          },
+          {
+            "coef": -0.24310755494716965,
+            "pvalue": 0.5354385996706773,
+            "ci_lower": -1.0125237561119556,
+            "ci_upper": 0.5263086462176163
+          },
+          {
+            "coef": -26498505824252.344,
+            "pvalue": 0.5215567667636842,
+            "ci_lower": -107586886631211.17,
+            "ci_upper": 54589874982706.484
+          }
+        ],
+        "significant_features": [],
+        "structured": false
+      },
+      "t2_distributional_asym": {
+        "skewness": 0.5724744862274331,
+        "skewness_test_stat": 7.602103266572873,
+        "skewness_pvalue": 2.913560839031169e-14,
+        "exceeds_threshold": true,
+        "asymmetric": true
+      },
+      "t3_path_dependence": {
+        "error": "'session_id'",
+        "lag_pvalue": 1.0,
+        "path_dependent": false
+      },
+      "t4_paraphrase_robustness": {
+        "error": "'Column not found: standardized_delta'",
+        "cv": Infinity,
+        "robust": false
+      },
+      "classification": "unstructured_noise"
+    }
+  },
+  "novel_means": {
+    "human": 5.475736812183585,
+    "gpt-base": 4.973782738814929,
+    "gpt-reasoning": 4.960083714719035
+  },
+  "canonical_means": {
+    "human": 17.088369438469623,
+    "gpt-base": 0.908720760234642,
+    "gpt-reasoning": 0.9082933453523788
+  },
+  "novel_larger_than_canonical": {
+    "gpt-base": true,
+    "gpt-reasoning": true
+  },
+  "cohens_d_novel_vs_canonical": {
+    "gpt-base": 1.972517262157644,
+    "gpt-reasoning": 1.9700458738433289
+  },
+  "residual_structure": {
+    "human": "non_human_llm",
+    "gpt-base": "non_human_llm",
+    "gpt-reasoning": "unstructured_noise"
+  },
+  "comparison_table": [
+    {
+      "agent_type": "human",
+      "game_type": "canonical",
+      "mean_abs_delta": 17.088369438469623
+    },
+    {
+      "agent_type": "human",
+      "game_type": "novel",
+      "mean_abs_delta": 5.475736812183585
+    },
+    {
+      "agent_type": "gpt-base",
+      "game_type": "canonical",
+      "mean_abs_delta": 0.908720760234642
+    },
+    {
+      "agent_type": "gpt-base",
+      "game_type": "novel",
+      "mean_abs_delta": 4.973782738814929
+    },
+    {
+      "agent_type": "gpt-reasoning",
+      "game_type": "canonical",
+      "mean_abs_delta": 0.9082933453523788
+    },
+    {
+      "agent_type": "gpt-reasoning",
+      "game_type": "novel",
+      "mean_abs_delta": 4.960083714719035
+    }
+  ],
+  "summary": [
+    {
+      "agent_type": "gpt-base",
+      "game_id": "novel_cascade",
+      "mean_delta": 4.302333488386165,
+      "mean_abs_delta": 7.3744867817731565,
+      "std_delta": 8.291401019422503,
+      "n": 400,
+      "game_type": "novel"
+    },
+    {
+      "agent_type": "gpt-base",
+      "game_id": "novel_fractional",
+      "mean_delta": 0.09362807659521906,
+      "mean_abs_delta": 0.4397739708944215,
+      "std_delta": 0.44491621666575504,
+      "n": 400,
+      "game_type": "novel"
+    },
+    {
+      "agent_type": "gpt-base",
+      "game_id": "novel_threshold",
+      "mean_delta": 3.32734872329663,
+      "mean_abs_delta": 7.107087463777209,
+      "std_delta": 8.149589563498955,
+      "n": 400,
+      "game_type": "novel"
+    },
+    {
+      "agent_type": "gpt-reasoning",
+      "game_id": "novel_cascade",
+      "mean_delta": 5.00916962443886,
+      "mean_abs_delta": 7.6654886910289175,
+      "std_delta": 8.232935678371563,
+      "n": 400,
+      "game_type": "novel"
+    },
+    {
+      "agent_type": "gpt-reasoning",
+      "game_id": "novel_fractional",
+      "mean_delta": 0.08780747167983975,
+      "mean_abs_delta": 0.4399768340843454,
+      "std_delta": 0.44740911866040356,
+      "n": 400,
+      "game_type": "novel"
+    },
+    {
+      "agent_type": "gpt-reasoning",
+      "game_id": "novel_threshold",
+      "mean_delta": 3.6873727884342395,
+      "mean_abs_delta": 6.774785619043842,
+      "std_delta": 7.5808643134194265,
+      "n": 400,
+      "game_type": "novel"
+    },
+    {
+      "agent_type": "human",
+      "game_id": "novel_cascade",
+      "mean_delta": 7.8569159328747045,
+      "mean_abs_delta": 8.077664703512939,
+      "std_delta": 4.92361244811789,
+      "n": 400,
+      "game_type": "novel"
+    },
+    {
+      "agent_type": "human",
+      "game_id": "novel_fractional",
+      "mean_delta": 0.3317926557993471,
+      "mean_abs_delta": 0.3884931433028548,
+      "std_delta": 0.20953201707627936,
+      "n": 400,
+      "game_type": "novel"
+    },
+    {
+      "agent_type": "human",
+      "game_id": "novel_threshold",
+      "mean_delta": 7.6901712255726435,
+      "mean_abs_delta": 7.961052589734963,
+      "std_delta": 5.044725160977524,
+      "n": 400,
+      "game_type": "novel"
+    }
+  ]
+}

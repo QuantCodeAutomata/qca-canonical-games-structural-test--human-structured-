@@ -1,0 +1,337 @@
+{
+  "experiment": "exp1_canonical",
+  "n_total": 39000,
+  "agent_types": [
+    "human",
+    "gpt-base",
+    "gpt-reasoning"
+  ],
+  "test_results": {
+    "human": {
+      "agent_label": "human",
+      "t1_conditional_dep": {
+        "model_summary": "                            OLS Regression Results                            \n==============================================================================\nDep. Variable:                  delta   R-squared:                       0.000\nModel:                            OLS   Adj. R-squared:                 -0.000\nMethod:                 Least Squares   F-statistic:                    0.8946\nDate:                Sat, 30 May 2026   Prob (F-statistic):              0.443\nTime:                        14:03:40   Log-Likelihood:                -59792.\nNo. Observations:               13000   AIC:                         1.196e+05\nDf Residuals:                   12996   BIC:                         1.196e+05\nDf Model:                           3                                         \nCovariance Type:            nonrobust                                         \n===============================================================================================\n                                  coef    std err          t      P>|t|      [0.025      0.975]\n-----------------------------------------------------------------------------------------------\nIntercept                   -4.696e+13   3.09e+13     -1.520      0.129   -1.08e+14    1.36e+13\nopponent_info_named[T.True]     0.8494      0.422      2.012      0.044       0.022       1.677\nframing_neutral[T.True]        -0.4899      0.422     -1.161      0.246      -1.317       0.337\nstake                        4.696e+13   3.09e+13      1.520      0.129   -1.36e+13    1.08e+14\n==============================================================================\nOmnibus:                     4034.560   Durbin-Watson:                   0.198\nProb(Omnibus):                  0.000   Jarque-Bera (JB):             9448.539\nSkew:                           1.797   Prob(JB):                         0.00\nKurtosis:                       5.127   Cond. No.                     3.31e+14\n==============================================================================\n\nNotes:\n[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.\n[2] The smallest eigenvalue is 3.03e-25. This might indicate that there are\nstrong multicollinearity problems or that the design matrix is singular.",
+        "r_squared": 0.00020647276956087257,
+        "f_pvalue": 0.4430043494776946,
+        "coef_table": [
+          {
+            "coef": -46964009272516.43,
+            "pvalue": 0.12860137325757234,
+            "ci_lower": -107537865247939.8,
+            "ci_upper": 13609846702906.938
+          },
+          {
+            "coef": 0.8493684631149099,
+            "pvalue": 0.04426640811579909,
+            "ci_lower": 0.02178908555103365,
+            "ci_upper": 1.676947840678786
+          },
+          {
+            "coef": -0.48990016193140057,
+            "pvalue": 0.24578272833478687,
+            "ci_lower": -1.3172207401304308,
+            "ci_upper": 0.3374204162676297
+          },
+          {
+            "coef": 46964009272533.0,
+            "pvalue": 0.12860137325743487,
+            "ci_lower": -13609846702889.938,
+            "ci_upper": 107537865247955.94
+          }
+        ],
+        "significant_features": [
+          "opponent_info"
+        ],
+        "structured": false
+      },
+      "t2_distributional_asym": {
+        "skewness": 1.796787504132874,
+        "skewness_test_stat": 58.19944867525226,
+        "skewness_pvalue": 0.0,
+        "exceeds_threshold": true,
+        "asymmetric": true
+      },
+      "t3_path_dependence": {
+        "error": "'session_id'",
+        "lag_pvalue": 1.0,
+        "path_dependent": false
+      },
+      "t4_paraphrase_robustness": {
+        "paraphrase_means": {
+          "0": 0.5988911551051923,
+          "1": 0.5695299647548963,
+          "2": 0.6444858193730916,
+          "3": 0.6342292285186845,
+          "4": 0.5311969616136574
+        },
+        "cv": 0.07838467466350663,
+        "robust": true,
+        "n_paraphrases": 5
+      },
+      "classification": "unstructured_noise"
+    },
+    "gpt-base": {
+      "agent_label": "human",
+      "t1_conditional_dep": {
+        "model_summary": "                            OLS Regression Results                            \n==============================================================================\nDep. Variable:                  delta   R-squared:                       0.001\nModel:                            OLS   Adj. R-squared:                  0.000\nMethod:                 Least Squares   F-statistic:                     2.268\nDate:                Sat, 30 May 2026   Prob (F-statistic):             0.0785\nTime:                        14:03:40   Log-Likelihood:                -22466.\nNo. Observations:               13000   AIC:                         4.494e+04\nDf Residuals:                   12996   BIC:                         4.497e+04\nDf Model:                           3                                         \nCovariance Type:            nonrobust                                         \n===============================================================================================\n                                  coef    std err          t      P>|t|      [0.025      0.975]\n-----------------------------------------------------------------------------------------------\nIntercept                   -5.633e+12   1.75e+12     -3.219      0.001   -9.06e+12    -2.2e+12\nopponent_info_named[T.True]     0.0912      0.024      3.813      0.000       0.044       0.138\nframing_neutral[T.True]        -0.0358      0.024     -1.499      0.134      -0.083       0.011\nstake                        5.633e+12   1.75e+12      3.219      0.001     2.2e+12    9.06e+12\n==============================================================================\nOmnibus:                     5830.204   Durbin-Watson:                   1.856\nProb(Omnibus):                  0.000   Jarque-Bera (JB):            28239.067\nSkew:                           2.189   Prob(JB):                         0.00\nKurtosis:                       8.742   Cond. No.                     3.31e+14\n==============================================================================\n\nNotes:\n[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.\n[2] The smallest eigenvalue is 3.03e-25. This might indicate that there are\nstrong multicollinearity problems or that the design matrix is singular.",
+        "r_squared": 0.0005232067507233706,
+        "f_pvalue": 0.07849637980336038,
+        "coef_table": [
+          {
+            "coef": -5632798771297.32,
+            "pvalue": 0.0012906289869555638,
+            "ci_lower": -9063037800664.781,
+            "ci_upper": -2202559741929.8604
+          },
+          {
+            "coef": 0.09115382163160052,
+            "pvalue": 0.00013818030469172284,
+            "ci_lower": 0.044288799831254486,
+            "ci_upper": 0.13801884343194654
+          },
+          {
+            "coef": -0.03583007317449906,
+            "pvalue": 0.13387857017445906,
+            "ci_lower": -0.082680439416473,
+            "ci_upper": 0.011020293067474887
+          },
+          {
+            "coef": 5632798771298.165,
+            "pvalue": 0.0012906289869532889,
+            "ci_lower": 2202559741930.73,
+            "ci_upper": 9063037800665.6
+          }
+        ],
+        "significant_features": [
+          "opponent_info",
+          "stake"
+        ],
+        "structured": false
+      },
+      "t2_distributional_asym": {
+        "skewness": 2.1906710554041764,
+        "skewness_test_stat": 65.17220877396558,
+        "skewness_pvalue": 0.0,
+        "exceeds_threshold": true,
+        "asymmetric": true
+      },
+      "t3_path_dependence": {
+        "error": "'session_id'",
+        "lag_pvalue": 1.0,
+        "path_dependent": false
+      },
+      "t4_paraphrase_robustness": {
+        "paraphrase_means": {
+          "0": 0.19598105261059018,
+          "1": 0.20449542144112617,
+          "2": 0.206275520571432,
+          "3": 0.1988994865332806,
+          "4": 0.18502150071604015
+        },
+        "cv": 0.04252072567669265,
+        "robust": true,
+        "n_paraphrases": 5
+      },
+      "classification": "unstructured_noise"
+    },
+    "gpt-reasoning": {
+      "agent_label": "human",
+      "t1_conditional_dep": {
+        "model_summary": "                            OLS Regression Results                            \n==============================================================================\nDep. Variable:                  delta   R-squared:                       0.002\nModel:                            OLS   Adj. R-squared:                  0.002\nMethod:                 Least Squares   F-statistic:                     8.015\nDate:                Sat, 30 May 2026   Prob (F-statistic):           2.47e-05\nTime:                        14:03:40   Log-Likelihood:                -22432.\nNo. Observations:               13000   AIC:                         4.487e+04\nDf Residuals:                   12996   BIC:                         4.490e+04\nDf Model:                           3                                         \nCovariance Type:            nonrobust                                         \n===============================================================================================\n                                  coef    std err          t      P>|t|      [0.025      0.975]\n-----------------------------------------------------------------------------------------------\nIntercept                    1.086e+12   1.75e+12      0.622      0.534   -2.34e+12    4.51e+12\nopponent_info_named[T.True]     0.1172      0.024      4.914      0.000       0.070       0.164\nframing_neutral[T.True]        -0.0085      0.024     -0.358      0.720      -0.055       0.038\nstake                       -1.086e+12   1.75e+12     -0.622      0.534   -4.51e+12    2.34e+12\n==============================================================================\nOmnibus:                     6168.507   Durbin-Watson:                   1.838\nProb(Omnibus):                  0.000   Jarque-Bera (JB):            34580.748\nSkew:                           2.274   Prob(JB):                         0.00\nKurtosis:                       9.569   Cond. No.                     3.31e+14\n==============================================================================\n\nNotes:\n[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.\n[2] The smallest eigenvalue is 3.03e-25. This might indicate that there are\nstrong multicollinearity problems or that the design matrix is singular.",
+        "r_squared": 0.0018468461599523422,
+        "f_pvalue": 2.4684791269805957e-05,
+        "coef_table": [
+          {
+            "coef": 1085735268742.3348,
+            "pvalue": 0.5339196509375617,
+            "ci_lower": -2335531375371.8984,
+            "ci_upper": 4507001912856.568
+          },
+          {
+            "coef": 0.11717098447190144,
+            "pvalue": 9.052207010414512e-07,
+            "ci_lower": 0.0704285462661369,
+            "ci_upper": 0.16391342267766598
+          },
+          {
+            "coef": -0.008531625408843481,
+            "pvalue": 0.7204343909146431,
+            "ci_lower": -0.05525944639039129,
+            "ci_upper": 0.03819619557270433
+          },
+          {
+            "coef": -1085735268741.4734,
+            "pvalue": 0.5339196509378832,
+            "ci_lower": -4507001912855.683,
+            "ci_upper": 2335531375372.7354
+          }
+        ],
+        "significant_features": [
+          "opponent_info"
+        ],
+        "structured": true
+      },
+      "t2_distributional_asym": {
+        "skewness": 2.2792607755301173,
+        "skewness_test_stat": 66.58924703274738,
+        "skewness_pvalue": 0.0,
+        "exceeds_threshold": true,
+        "asymmetric": true
+      },
+      "t3_path_dependence": {
+        "error": "'session_id'",
+        "lag_pvalue": 1.0,
+        "path_dependent": false
+      },
+      "t4_paraphrase_robustness": {
+        "paraphrase_means": {
+          "0": 0.20288338459371227,
+          "1": 0.1995180699588743,
+          "2": 0.20329360218132622,
+          "3": 0.20496260257481258,
+          "4": 0.2034606212642789
+        },
+        "cv": 0.009901415756867515,
+        "robust": true,
+        "n_paraphrases": 5
+      },
+      "classification": "unstructured_noise"
+    }
+  },
+  "cohens_d_human_vs_gptbase": 0.949444873297663,
+  "human_mean_abs_delta": 17.088369438469623,
+  "llm_mean_abs_delta": 0.9085070527935103,
+  "human_delta_larger": true,
+  "residual_structure": {
+    "human": "unstructured_noise",
+    "gpt-base": "unstructured_noise",
+    "gpt-reasoning": "unstructured_noise"
+  },
+  "human_residual_structured": "unstructured_noise",
+  "llm_residual_structures": {
+    "gpt-base": "unstructured_noise",
+    "gpt-reasoning": "unstructured_noise"
+  },
+  "summary": [
+    {
+      "agent_type": "gpt-base",
+      "game_id": "beauty_contest",
+      "mean_delta": 1.247417220199633,
+      "mean_abs_delta": 1.247417220199633,
+      "std_delta": 1.8368397749287182,
+      "n": 1000
+    },
+    {
+      "agent_type": "gpt-base",
+      "game_id": "public_goods",
+      "mean_delta": 1.1344016411289664,
+      "mean_abs_delta": 1.1344016411289664,
+      "std_delta": 1.433880556926325,
+      "n": 5000
+    },
+    {
+      "agent_type": "gpt-base",
+      "game_id": "stag_hunt",
+      "mean_delta": 0.4506,
+      "mean_abs_delta": 0.4506,
+      "std_delta": 0.4976034182281776,
+      "n": 5000
+    },
+    {
+      "agent_type": "gpt-base",
+      "game_id": "travelers_dilemma",
+      "mean_delta": 1.302056479402996,
+      "mean_abs_delta": 1.302056479402996,
+      "std_delta": 1.9113283285339064,
+      "n": 1000
+    },
+    {
+      "agent_type": "gpt-base",
+      "game_id": "ultimatum",
+      "mean_delta": 1.3388879778028842,
+      "mean_abs_delta": 1.3388879778028842,
+      "std_delta": 1.9623639116779392,
+      "n": 1000
+    },
+    {
+      "agent_type": "gpt-reasoning",
+      "game_id": "beauty_contest",
+      "mean_delta": 1.366162663342147,
+      "mean_abs_delta": 1.366162663342147,
+      "std_delta": 1.9943906959931048,
+      "n": 1000
+    },
+    {
+      "agent_type": "gpt-reasoning",
+      "game_id": "public_goods",
+      "mean_delta": 1.1127797103985693,
+      "mean_abs_delta": 1.1127797103985693,
+      "std_delta": 1.433818237929078,
+      "n": 5000
+    },
+    {
+      "agent_type": "gpt-reasoning",
+      "game_id": "stag_hunt",
+      "mean_delta": 0.4638,
+      "mean_abs_delta": 0.4638,
+      "std_delta": 0.4987377144968811,
+      "n": 5000
+    },
+    {
+      "agent_type": "gpt-reasoning",
+      "game_id": "travelers_dilemma",
+      "mean_delta": 1.2909173200127864,
+      "mean_abs_delta": 1.2909173200127864,
+      "std_delta": 1.8446829590738398,
+      "n": 1000
+    },
+    {
+      "agent_type": "gpt-reasoning",
+      "game_id": "ultimatum",
+      "mean_delta": 1.2678349542331446,
+      "mean_abs_delta": 1.2678349542331446,
+      "std_delta": 1.8640716614748094,
+      "n": 1000
+    },
+    {
+      "agent_type": "human",
+      "game_id": "beauty_contest",
+      "mean_delta": 29.289725629588563,
+      "mean_abs_delta": 29.289725629588563,
+      "std_delta": 10.17913014652321,
+      "n": 1000
+    },
+    {
+      "agent_type": "human",
+      "game_id": "public_goods",
+      "mean_delta": 10.944704989027672,
+      "mean_abs_delta": 10.944704989027672,
+      "std_delta": 2.981822344422864,
+      "n": 5000
+    },
+    {
+      "agent_type": "human",
+      "game_id": "stag_hunt",
+      "mean_delta": 0.6704,
+      "mean_abs_delta": 0.6704,
+      "std_delta": 0.47011492383067466,
+      "n": 5000
+    },
+    {
+      "agent_type": "human",
+      "game_id": "travelers_dilemma",
+      "mean_delta": 72.3098465644803,
+      "mean_abs_delta": 72.3098465644803,
+      "std_delta": 14.24868853897076,
+      "n": 1000
+    },
+    {
+      "agent_type": "human",
+      "game_id": "ultimatum",
+      "mean_delta": 62.47370556089788,
+      "mean_abs_delta": 62.47370556089788,
+      "std_delta": 19.483906747612178,
+      "n": 1000
+    }
+  ]
+}
